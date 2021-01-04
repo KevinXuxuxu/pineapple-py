@@ -9,6 +9,9 @@ class Variable:
         self.line_num = line_num
         self.name = name
 
+    def __repr__(self) -> str:
+        return 'Variable({}, {})'.format(self.line_num, self.name)
+
 
 class Statement(ABC):
     pass
@@ -21,6 +24,9 @@ class Assignment(Statement):
         self.variable = variable
         self.string = string
 
+    def __repr__(self) -> str:
+        return 'Assignment({}, {}, {})'.format(self.line_num, self.variable, self.string)
+
 
 class Print(Statement):
 
@@ -28,9 +34,15 @@ class Print(Statement):
         self.line_num = line_num
         self.variable = variable
 
+    def __repr__(self) -> str:
+        return 'Print({}, {})'.format(self.line_num, self.variable)
+
 
 class SourceCode:
 
     def __init__(self, line_num: int, statements: List[Statement]):
         self.line_num = line_num
         self.statements = statements
+
+    def __repr__(self) -> str:
+        return 'SourceCode({}, {})'.format(self.line_num, self.statements)
