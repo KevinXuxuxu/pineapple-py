@@ -59,8 +59,7 @@ def parse_statement(lexer: Lexer) -> Statement:
     raise ParseException('parse_statement(): unexpected token {}'.format(lexer.look_ahead()))
 
 
-def parse(source_code: str) -> SourceCode:
-    lexer = Lexer(source_code)
+def parse(lexer: Lexer) -> SourceCode:
     statements = []
     line_num = lexer.line_num
     while lexer.look_ahead() != TokenType.TOKEN_EOF:

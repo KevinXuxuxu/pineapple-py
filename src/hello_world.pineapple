@@ -1,0 +1,6 @@
+$a = "pen pineapple
+apple pen."
+
+print($a)
+$a = "another test 1123" $a = "overwrite test
+with new line" print( $a )
